@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #D2F2EE;
+
+            color: #fff;
+
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #28a745;
+
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #19c5b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+
+        .header-style {
+            background: linear-gradient(to right, #28a745, #000);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .subtitle-text {
+            color: #13E3AA;
+            font-style: italic;
+        }
+
+        .container {
+            margin-top: 50px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+
+        }
+
+        .container-contact {
+            margin-top: 50px;
+        }
+
+        .client-container {
+            margin-top: 50px;
+            margin-bottom: 100px;
+
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .custom-file-label {
+            background-color: #03D589;
+
+            color: #00B9B4;
+
+        }
+
+        .label-style {
+            color: #00B9B4;
+        }
+
+        .client-images-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .client-image {
+            display: inline-block;
+            margin-right: 20px;
+            max-width: 100px;
+
+        }
+
+        .contact-details-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            flex-basis: calc(33.33% - 20px);
+            color: #00B9B4;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .sub-container {
+            margin-bottom: 100px;
+            min-width: 65vw;
+        }
+
+        .logoimage {
+            border-radius: 50%;
+            height: 6vh;
+            width: 30%;
+        }
+
+        .background-div {
+            width: 30%;
+            /* Adjust as needed */
+            height: 500px;
+            /* Adjust as needed */
+            background-image: url('assets/women_direction.png');
+            /* Specify the path to your image */
+            background-size: cover;
+            /* This will make the image cover the entire div */
+            background-position: center;
+            /* Optionally, you can add more CSS properties to customize the background */
+        }
+
+        .form-style {
+            width: 60%;
+        }
+
+        .about-section {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            margin-top: 50px;
+        }
+
+        .container-about {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            color: rgb(0, 145, 123);
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .team-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+            margin-top: 50px;
+        }
+
+        .container-team {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .member-info {
+            flex: 1;
+        }
+
+        .member-info h3 {
+            margin-bottom: 5px;
+            color: #00B9B4;
+        }
+
+        .member-info p {
+            color: #777;
+        }
+
+        .member-image {
+            width: 100px;
+            /* Adjust as needed */
+            height: 100px;
+            /* Adjust as needed */
+            background-color: #ddd;
+            /* Placeholder color */
+            border-radius: 50%;
+            /* Make it round */
+            margin-left: 20px;
+            background-size: cover;
+            /* This will make the image cover the entire div */
+            background-position: center;
+        }
+    </style>
+    <title>Job Consultancy</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-success fixed-top bg-info">
+        <a class="navbar-brand" href="#">
+            <img src="img/logoimage.jpeg" alt="Image problem" class="logoimage">
+            Your Consultancy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="scrollToSection('enquiry-form')" class="nav-link" href="#">Enquiry form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="scrollToSection('about-section')">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="scrollToSection('our-team')">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="scrollToSection('contact-detail')" class="nav-link" href="#">Contact</a>
+                </li> 
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <h1 class="header-style">Welcome to Job Consultancy</h1>
+        <p class="subtitle-text">Your Partner in Career Growth</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Job Search</h2>
+            <p>Explore our vast database of job opportunities. Find the perfect match for your skills and career goals.
+            </p>
+        </section>
+
+        <section>
+            <h2>Resume Services</h2>
+            <p>Get professional assistance in creating a standout resume that will impress employers and increase your
+                chances of landing the job.</p>
+        </section>
+
+        <section>
+            <h2>Career Counseling</h2>
+            <p>Our experienced career counselors are here to guide you in making informed decisions about your career
+                path and development.</p>
+        </section>
+        <div class="sub-container">
+            <div class="container" id="enquiry-form">
+                <div class="background-div"></div>
+                <div class="form-style">
+                    <h2 class="mb-4">Job Application Form</h2>
+                    <form action="" method="get" onsubmit="return validate()">
+                        <div class="form-group">
+                            <label class="label-style" for="fullName">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName">
+                            <span id="name1" class="text-danger font-weight-bold"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-style" for="phoneNumber">Phone Number</label>
+                            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber">
+                            <span id="no1" class="text-danger font-weight-bold"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-style" for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                            <span id="email1" class="text-danger font-weight-bold"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-style" for="jobSector">Job Sector</label>
+                            <select class="form-control" id="jobSector" name="jobSector">
+                                <option value="">Select a Job Sector</option>
+                                <option value="IT">Information Technology</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Healthcare">Healthcare</option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-style" for="cv">Attach CV</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="cv" name="cv">
+                                <label class="custom-file-label" for="cv">Choose file</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+            <section class="team-section" id="our-team">
+                <div class="container-team">
+                    <h2>Our Team</h2>
+
+                    <div class="team-member">
+                        <div class="member-info">
+                            <h3 class="">John Doe</h3>
+                            <p>Founder & CEO</p>
+                        </div>
+                        <div class="member-image" style="background-image: url('https://img.freepik.com/free-photo/serious-man-formal-jacket-tie-standing-camera_1262-20387.jpg');"></div> <!-- Image placeholder -->
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-info">
+                            <h3>Jane Smith</h3>
+                            <p>Head of Operations</p>
+                        </div>
+                        <div class="member-image" style="background-image: url('https://img.freepik.com/premium-photo/business-man-suit-white-transparent-background_457222-4264.jpg');"></div> <!-- Image placeholder -->
+                    </div>
+
+                    <!-- Add more team members as needed -->
+
+                </div>
+            </section>
+            <div class="client-container">
+                <h2>Our Clients</h2>
+                <div class="client-images-container">
+
+                    <img src="https://swastikplacement.in/wp-content/uploads/2023/02/Travel-Expert.png" alt="Client 1"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2023/02/Logo-7.png" alt="Client 2"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/Nexa_Job.jpg" alt="Client 3"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/maruti-arena-job.png"
+                        alt="Client 4" class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/hyundai-job.png" alt="Client 4"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/kia-car-sales-executive-1.png"
+                        alt="Client 4" class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2023/02/Travel-Expert.png" alt="Client 1"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2023/02/Logo-7.png" alt="Client 2"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/Nexa_Job.jpg" alt="Client 3"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/maruti-arena-job.png"
+                        alt="Client 4" class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/hyundai-job.png" alt="Client 4"
+                        class="client-image">
+                    <img src="https://swastikplacement.in/wp-content/uploads/2020/11/kia-car-sales-executive-1.png"
+                        alt="Client 4" class="client-image">
+
+                </div>
+            </div>
+            <div class="container-contact" id="contact-detail">
+                <h2>Contact Details</h2>
+                <div class="contact-details-container">
+                    <div class="contact-item">
+                        <h4>CALL US</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>EMAIL ADDRESS</h4>
+                        <p>info@example.com</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>OPEN HOURS</h4>
+                        <p>Monday to Friday: 9 AM - 5 PM</p>
+                    </div>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-74.005941!3d40.712776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDE0JzI3LjAiTiA3NMKwMzAnNDMuNyJX!5e0!3m2!1sen!2sus!4v1614866938233!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <section class="about-section" id="about-section">
+                <div class="container-about">
+                    <h2>About Our Consultancy Firm</h2>
+                    <p>At Your Consultancy, we specialize in providing expert advice and solutions to businesses across
+                        various industries. With a team of experienced consultants, we offer strategic guidance and
+                        practical support to help our clients achieve their goals and navigate complex challenges.</p>
+
+                    <p>Our consultancy services cover a wide range of areas, including:</p>
+                    <ul>
+                        <li>Business Strategy</li>
+                        <li>Market Research and Analysis</li>
+                        <li>Financial Planning and Management</li>
+                        <li>Operations Optimization</li>
+                        <li>Human Resources Development</li>
+                        <li>Technology Integration</li>
+                    </ul>
+
+                    <p>With a client-focused approach, we work closely with each organization to understand their unique
+                        needs and develop tailored solutions that drive tangible results. Whether you're a startup
+                        looking to scale up or an established company seeking to innovate, we're here to support you
+                        every step of the way.</p>
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Consultancy. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        function scrollToSection(id) {
+            const section2 = document.getElementById(id);
+            section2.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function validate() {
+            var fname = document.getElementById("fullName").value;
+            var no = document.getElementById("phoneNumber").value;
+            var empemail = document.getElementById("email").value;
+            var atposition = empemail.indexOf("@");
+            var dotposition = empemail.lastIndexOf(".");
+
+            var job = document.getElementById("jobSector").value;
+
+            if (fname == "") {
+                document.getElementById("name1").innerHTML = "Please fill the field";
+                return false;
+            }
+            else if (fname.length < 4) {
+                document.getElementById("name1").innerHTML = "Name length greater than 4 character";
+                return false;
+            }
+            else if (!isNaN(fname)) {
+                document.getElementById("name1").innerHTML = "Name should be character";
+                return false;
+            }
+            else {
+                document.getElementById("name1").innerHTML = " ";
+            }
+
+            if (no == "") {
+                document.getElementById("no1").innerHTML = "Please fill the field";
+                return false;
+            }
+            else if (no.length <= 10) {
+                document.getElementById("no1").innerHTML = "Number should be 10 character";
+                return false;
+            }
+            else if (isNaN(no)) {
+                document.getElementById("no1").innerHTML = "Please only Number";
+                return false;
+            }
+            else {
+                document.getElementById("no1").innerHTML = " ";
+
+            }
+
+
+            if (empemail == "") {
+                document.getElementById("email1").innerHTML = "Please fill the field";
+                return false;
+            }
+            else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+                document.getElementById("email1").innerHTML = "Please enter valid email";
+                return false;
+            }
+            else {
+                document.getElementById("email1").innerHTML = " ";
+            }
+
+
+
+
+        }
+    </script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
