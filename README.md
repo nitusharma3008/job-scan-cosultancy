@@ -6,5 +6,4 @@ A website project created for learning frontend development using HTML, CSS, and
 
 
 
-Uploading Screen Recording 2024-05-03 at 22.13.21.mov…
 
