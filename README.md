@@ -2,7 +2,7 @@
 
 A website project created for learning frontend development using HTML, CSS, and JavaScript. The Job Scan Consultancy website serves as a platform to showcase various frontend techniques and practices.
 
-https://e-commerce-website-seven-theta.vercel.app/
+https://job-scan-cosultancy-ilju.vercel.app/
 
 
 
